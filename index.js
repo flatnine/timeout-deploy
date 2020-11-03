@@ -119,7 +119,7 @@ async function action() {
             });
             return;
         }
-        const message = `Success: http://www-${hostname}.digital.timeout.com`;
+        const message = `Success: http://${hostname}`;
         await octokit.issues.createComment({
             ...github.context.repo,
             issue_number: github.context.issue.number,
