@@ -1,4 +1,4 @@
-name: "Github Action for Helm on EKS (with aws-iam-authenticator)"
+name: "Github Action for deploying gp-web preview on EKS (with aws-iam-authenticator)"
 description: "Authenticates on EKS clusters using aws-iam-authenticator and executes Helm commands. Can also be used with kubectl commands."
 branding:
   icon: 'anchor'  
@@ -7,23 +7,20 @@ inputs:
   app_name:
     description: "Application Name" 
     required: true
-  command:
-    description: "Your command (kubectl or helm)" 
+  action:
+    description: "Deployment action (install or delete)" 
     required: true
-  namespace: 
-    description: "The k8s namespace to use"
-    required: true 
-  hostname:
-    description: "Hostname"
+  domainname:
+    description: "Domain name preview stack should be registered on"
     required: false
   imageTag: 
-    description: "Image Tag"
+    description: "Image Tag (required for command: install)"
     required: false 
   graffitiSecret:
-    description: "graffitiSecret"
+    description: "graffitiSecret used by gp-web (required for command: install)"
     required: false
   accountId:
-    description: "accountId"
+    description: "accountId used for resolving ECR repo (required for command: install)"
     required: false
 outputs:
   result:

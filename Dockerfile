@@ -1,7 +1,5 @@
 FROM node:alpine
 
-# FROM alpine:3.12
-
 ARG KUBECTL_VERSION="1.17.7"
 
 RUN apk add py-pip curl wget ca-certificates git bash jq
@@ -22,7 +20,5 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-
-# ENTRYPOINT ["node", "/usr/src/app/index.js"]
 
 ENTRYPOINT ["/entrypoint.sh"]:
