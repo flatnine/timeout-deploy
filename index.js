@@ -10,7 +10,7 @@ async function action() {
         return; 
     }
 
-    const action = core.getInput(`command`);
+    const action = core.getInput(`action`);
     if (!action) {
         console.log("Action is required");
         return; 
