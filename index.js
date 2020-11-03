@@ -16,26 +16,28 @@ async function action() {
         return; 
     }
     
+    const domainname = core.getInput(`domainname`);
+    const imageTag = core.getInput(`imageTag`);
+    const graffitiSecret = core.getInput(`graffitiSecret`);
+    const accountId = core.getInput(`accountId`);
+
     if (action === 'install') {
-        const domainname = core.getInput(`domainname`);
+        
         if (!domainname) {
             console.log("domainname is required");
             return; 
         }
 
-        const imageTag = core.getInput(`imageTag`);
         if (!imageTag) {
             console.log("imageTag is required");
             return; 
         }
         
-        const graffitiSecret = core.getInput(`graffitiSecret`);
         if (!graffitiSecret) {
             console.log("graffitiSecret is required");
             return; 
         }
 
-        const accountId = core.getInput(`accountId`);
         if (!accountId) {
             console.log("accountId is required");
             return; 
