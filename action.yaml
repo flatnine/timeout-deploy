@@ -4,13 +4,13 @@ branding:
   icon: 'anchor'  
   color: 'blue'
 inputs:
-  app_name:
+  appName:
     description: "Application Name" 
     required: true
   action:
     description: "Deployment action (install or delete)" 
     required: true
-  domainname:
+  domainName:
     description: "Domain name preview stack should be registered on"
     required: false
   imageTag: 
